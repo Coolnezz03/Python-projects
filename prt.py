@@ -61,7 +61,7 @@ def process_product(url):
             product_data['Запчасть'] = product_data['Название запчасти']
 
             product_data['F_R'], product_data['R_L'] = product_data['Расположение'].split(',', maxsplit=1)
-            product_data['R_L'] = ''.join([x for x in product_data['R_L'] if x.isalpha()])
+            product_data['R_L'] = ''.join([x for x in product_data['R_L'] if 1071 < ord(x) < 1104])
             product_data['F_R'], product_data['R_L'] = q[product_data['F_R']], q[product_data['R_L']]
             product_data['Розница'] = product_data['Цена']
             product_data['Количество'] = 1
